@@ -20,9 +20,9 @@ def main():
             )
         )
 
-        # Move to position 180°
-        print("Moving to position 180° ...")
-        motor.move_to(position=180, speed=300)
+        # Move to position 90°
+        print("Moving to position 90° ...")
+        motor.move_to(position=90, speed=300)
 
         # Let it run for 5 seconds while printing telemetry
         try:

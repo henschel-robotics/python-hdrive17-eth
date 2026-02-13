@@ -9,7 +9,7 @@ Quickstart::
     from hdrive import HDrive
 
     with HDrive("192.168.122.102") as motor:
-        motor.move_to(15000)
+        motor.move_to(90)
 
 Full documentation: https://henschel-robotics.ch
 """

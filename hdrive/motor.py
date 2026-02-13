@@ -9,7 +9,7 @@ Example::
     from hdrive import HDrive
 
     with HDrive("192.168.122.102") as motor:
-        motor.move_to(15000)
+        motor.move_to(90)
         print(motor.telemetry)
 """
 
@@ -47,12 +47,12 @@ class HDrive:
 
         # Simple usage
         motor = HDrive("192.168.122.102")
-        motor.move_to(15000)
+        motor.move_to(90)
         motor.close()
 
         # Context manager (recommended)
         with HDrive("192.168.122.102") as motor:
-            motor.move_to(15000)
+            motor.move_to(90)
             time.sleep(2)
             print(motor.telemetry)
     """
@@ -269,10 +269,10 @@ class HDrive:
         acc: int = 5000,
         decc: int = 5000,
     ) -> None:
-        """Move to an absolute encoder position.
+        """Move to an absolute position in degrees.
 
         Args:
-            position: Target position in encoder counts.
+            position: Target position in degrees.
             speed: Target speed value.
             torque: Torque limit (0–1000, where 1000 = 100%).
             acc: Acceleration ramp value.
