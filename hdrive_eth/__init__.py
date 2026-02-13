@@ -6,7 +6,7 @@ Control Henschel Robotics HDrive17-ETH servo drives from Python.
 
 Quickstart::
 
-    from hdrive import HDrive
+    from hdrive_eth import HDrive
 
     with HDrive("192.168.122.102") as motor:
         motor.move_to(90)
@@ -26,7 +26,7 @@ from .exceptions import (
     FirmwareVersionError,
 )
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 __author__ = "Henschel Robotics GmbH"
 
 __all__ = [

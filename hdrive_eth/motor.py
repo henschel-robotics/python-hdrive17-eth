@@ -6,7 +6,7 @@ connection for commands and the UDP telemetry receiver.
 
 Example::
 
-    from hdrive import HDrive
+    from hdrive_eth import HDrive
 
     with HDrive("192.168.122.102") as motor:
         motor.move_to(90)

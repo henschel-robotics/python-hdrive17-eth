@@ -9,7 +9,7 @@ Usage:
 """
 
 import time
-from hdrive import HDrive
+from hdrive_eth import HDrive
 
 def main():
     with HDrive("192.168.122.102") as motor:

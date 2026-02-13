@@ -35,7 +35,7 @@ pip install -e .
 ## Quickstart
 
 ```python
-from hdrive import HDrive
+from hdrive_eth import HDrive
 import time
 
 with HDrive("192.168.122.102") as motor:
@@ -56,7 +56,7 @@ with HDrive("192.168.122.102") as motor:
 ### Connect
 
 ```python
-from hdrive import HDrive
+from hdrive_eth import HDrive
 
 # Recommended: use a context manager (auto-connect and auto-disconnect)
 with HDrive("192.168.122.102") as motor:
@@ -139,7 +139,7 @@ motor.on_telemetry(on_frame)
 ### Raw Command
 
 ```python
-from hdrive import Mode
+from hdrive_eth import Mode
 
 # Full control over all parameters
 motor.send_raw(
@@ -178,7 +178,7 @@ The binary telemetry frame contains 33 `int32` values received via UDP at ~1 kHz
 | 19 | `software_version` | Firmware version |
 | 23–30 | `slave_positions` | CAN slave positions (list of 8) |
 
-See `hdrive/telemetry.py` for the full list of all 33 fields.
+See `hdrive_eth/telemetry.py` for the full list of all 33 fields.
 
 ## Network Configuration
 

@@ -13,7 +13,7 @@ import argparse
 import logging
 import time
 
-from hdrive import HDrive
+from hdrive_eth import HDrive
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s  %(message)s")
 

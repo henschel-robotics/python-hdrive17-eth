@@ -9,7 +9,7 @@ Usage:
 """
 
 import time
-from hdrive import HDrive
+from hdrive_eth import HDrive
 
 
 def main():
