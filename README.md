@@ -15,7 +15,7 @@ Control [Henschel Robotics](https://henschel-robotics.ch) **HDrive17-ETH** servo
 ## Installation
 
 ```bash
-pip install hdrive
+pip install hdrive-eth
 ```
 
 Or install from source:
