@@ -9,11 +9,11 @@ Usage:
 """
 
 import time
-from hdrive_eth import HDrive
+from hdrive_eth import HDriveETH
 
 
 def main():
-    with HDrive("192.168.122.102") as motor:
+    with HDriveETH("192.168.122.102") as motor:
         print("Setting torque ...")
         motor.set_torque(torque=50)
 

@@ -9,10 +9,10 @@ Usage:
 """
 
 import time
-from hdrive_eth import HDrive
+from hdrive_eth import HDriveETH
 
 def main():
-    with HDrive("192.168.122.102") as motor:
+    with HDriveETH("192.168.122.102") as motor:
         # Print telemetry as it arrives
         motor.on_telemetry(
             lambda f: print(

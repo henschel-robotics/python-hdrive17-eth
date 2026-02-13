@@ -1,20 +1,20 @@
 """
-HDrive Python SDK
+HDriveETH Python SDK
 =================
 
 Control Henschel Robotics HDrive17-ETH servo drives from Python.
 
 Quickstart::
 
-    from hdrive_eth import HDrive
+    from hdrive_eth import HDriveETH
 
-    with HDrive("192.168.122.102") as motor:
+    with HDriveETH("192.168.122.102") as motor:
         motor.move_to(90)
 
 Full documentation: https://henschel-robotics.ch
 """
 
-from .motor import HDrive
+from .motor import HDriveETH
 from .telemetry import TelemetryFrame, TelemetryReceiver
 from .protocol import Mode
 from .exceptions import (
@@ -26,11 +26,11 @@ from .exceptions import (
     FirmwareVersionError,
 )
 
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 __author__ = "Henschel Robotics GmbH"
 
 __all__ = [
-    "HDrive",
+    "HDriveETH",
     "TelemetryFrame",
     "TelemetryReceiver",
     "Mode",

@@ -1,4 +1,4 @@
-# HDrive Python SDK
+# HDriveETH Python SDK
 
 Control [Henschel Robotics](https://henschel-robotics.ch) **HDrive17-ETH** servo drives from Python. No PLC required.
 
@@ -35,10 +35,10 @@ pip install -e .
 ## Quickstart
 
 ```python
-from hdrive_eth import HDrive
+from hdrive_eth import HDriveETH
 import time
 
-with HDrive("192.168.122.102") as motor:
+with HDriveETH("192.168.122.102") as motor:
     # Move to 90 degrees
     motor.move_to(90)
 
@@ -56,10 +56,10 @@ with HDrive("192.168.122.102") as motor:
 ### Connect
 
 ```python
-from hdrive_eth import HDrive
+from hdrive_eth import HDriveETH
 
 # Recommended: use a context manager (auto-connect and auto-disconnect)
-with HDrive("192.168.122.102") as motor:
+with HDriveETH("192.168.122.102") as motor:
     motor.move_to(90)
 
 # The motor is stopped (mode=0) and the connection is closed automatically.
@@ -139,7 +139,7 @@ motor.on_telemetry(on_frame)
 ### Raw Command
 
 ```python
-from hdrive_eth import Mode
+from hdrive_eth import HDriveETH, Mode
 
 # Full control over all parameters
 motor.send_raw(
@@ -190,7 +190,7 @@ See `hdrive_eth/telemetry.py` for the full list of all 33 fields.
 
 ```python
 # Custom IP (ports are auto-discovered from the drive)
-motor = HDrive("192.168.1.50")
+motor = HDriveETH("192.168.1.50")
 ```
 
 ## Examples

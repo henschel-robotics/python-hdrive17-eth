@@ -6,9 +6,9 @@ connection for commands and the UDP telemetry receiver.
 
 Example::
 
-    from hdrive_eth import HDrive
+    from hdrive_eth import HDriveETH
 
-    with HDrive("192.168.122.102") as motor:
+    with HDriveETH("192.168.122.102") as motor:
         motor.move_to(90)
         print(motor.telemetry)
 """
@@ -34,7 +34,7 @@ _TCP_COMMAND_PORT = 1000
 _UDP_TELEMETRY_PORT = 1001
 
 
-class HDrive:
+class HDriveETH:
     """Interface to an HDrive17-ETH servo drive.
 
     Args:
@@ -46,12 +46,12 @@ class HDrive:
     Example::
 
         # Simple usage
-        motor = HDrive("192.168.122.102")
+        motor = HDriveETH("192.168.122.102")
         motor.move_to(90)
         motor.close()
 
         # Context manager (recommended)
-        with HDrive("192.168.122.102") as motor:
+        with HDriveETH("192.168.122.102") as motor:
             motor.move_to(90)
             time.sleep(2)
             print(motor.telemetry)
@@ -220,7 +220,7 @@ class HDrive:
     def is_connected(self) -> bool:
         return self._connected
 
-    def __enter__(self) -> "HDrive":
+    def __enter__(self) -> "HDriveETH":
         return self
 
     def __exit__(self, *args) -> None:
@@ -501,7 +501,7 @@ class HDrive:
     def _send(self, data: bytes) -> None:
         """Send raw bytes over TCP (thread-safe)."""
         if not self._connected or self._socket is None:
-            raise NotConnectedError("Not connected to HDrive. Call connect() first.")
+            raise NotConnectedError("Not connected to HDriveETH. Call connect() first.")
 
         with self._lock:
             try:

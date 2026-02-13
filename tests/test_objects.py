@@ -13,7 +13,7 @@ import argparse
 import logging
 import time
 
-from hdrive_eth import HDrive
+from hdrive_eth import HDriveETH
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s  %(message)s")
 
@@ -28,7 +28,7 @@ READ_OBJECTS = [
 ]
 
 
-def run_read_stress(motor: HDrive, count: int, delay: float):
+def run_read_stress(motor: HDriveETH, count: int, delay: float):
     """Blast read requests as fast as possible."""
     print(f"\n{'='*60}")
     print(f"  READ STRESS TEST — {count} requests, delay {delay*1000:.0f}ms")
@@ -60,7 +60,7 @@ def run_read_stress(motor: HDrive, count: int, delay: float):
     _print_stats("READ", ok, errors, times)
 
 
-def run_write_stress(motor: HDrive, count: int, delay: float):
+def run_write_stress(motor: HDriveETH, count: int, delay: float):
     """Blast write requests (toggle m4s34 between 0 and 1)."""
     print(f"\n{'='*60}")
     print(f"  WRITE STRESS TEST — {count} requests, delay {delay*1000:.0f}ms")
@@ -91,7 +91,7 @@ def run_write_stress(motor: HDrive, count: int, delay: float):
     _print_stats("WRITE", ok, errors, times)
 
 
-def run_readwrite_stress(motor: HDrive, count: int, delay: float):
+def run_readwrite_stress(motor: HDriveETH, count: int, delay: float):
     """Alternate read and write as fast as possible."""
     print(f"\n{'='*60}")
     print(f"  READ/WRITE MIX TEST — {count} rounds, delay {delay*1000:.0f}ms")
@@ -166,7 +166,7 @@ def main():
                         help="Delay between requests in seconds (0 = no delay)")
     args = parser.parse_args()
 
-    with HDrive(args.ip) as motor:
+    with HDriveETH(args.ip) as motor:
         print(f"\nTarget: {args.ip}")
         print(f"Delay:  {args.delay*1000:.0f}ms between requests")
 
