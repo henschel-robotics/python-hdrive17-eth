@@ -33,7 +33,7 @@ classifiers = [
 [project.urls]
 Homepage = "https://henschel-robotics.ch"
 Documentation = "https://henschel-robotics.ch"
-Repository = "https://github.com/henschel-robotics/hdrive-python"
+Repository = "https://github.com/henschel-robotics/python-hdrive17-eth"
 
 [project.optional-dependencies]
 dev = [
