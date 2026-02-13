@@ -1,0 +1,18 @@
+# hdrive SDK — Python dependencies
+#
+# Core library: ZERO external dependencies (uses only Python standard library).
+# This is intentional — the SDK should work on any machine with Python 3.8+
+# without installing anything beyond the SDK itself.
+#
+# Install the SDK:
+#   pip install .
+#
+# Or install in development mode:
+#   pip install -e ".[dev]"
+
+# --- Development / testing dependencies (optional) ---
+# Install with: pip install -e ".[dev]"
+#
+# pytest>=7.0
+# pytest-cov>=4.0
+# ruff>=0.1.0
